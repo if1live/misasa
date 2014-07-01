@@ -61,10 +61,12 @@ def api_parent_count():
 
 
 @app.route('/')
-def view_index():
-    parent = fl.request.args.get('p', None)
+@app.route('/<parent>')
+def view_index(parent=None):
+    if parent is None:
+        parent = fl.request.args.get('p', None)
     return fl.render_template('index.html', parent=parent)
 
-@app.route('/<parent>')
-def view_index_parent(parent):
-    return fl.render_template('index.html', parent=parent)
+@app.route('/dev/')
+def view_dev():
+    return fl.render_template('dev.html')
