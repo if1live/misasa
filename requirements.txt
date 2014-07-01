@@ -2,3 +2,4 @@ flask
 sqlalchemy
 nose
 flask-superadmin
+bitly_api
