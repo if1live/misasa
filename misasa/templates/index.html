@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="{{ url_for('static', filename='js/vendor/modernizr-2.6.2.min.js') }}"></script>
+  </head>
+  <body>
+    <!-- Add your site or application content here -->
+    <p>Hello world! This is HTML5 Boilerplate.</p>
+
+    <form method="POST" action="{{ url_for('api_register_user') }}" class="form-pre-registration">
+      <select name="os_type">
+        <option value="a">Android</option>
+        <option value="i">iPhone</option>
+      </select>
+      <br/>
+
+      <label>phone
+        <input type="text" name="phone" value="010-1234-4321"/>
+      </label>
+      <br/>
+
+      <label>parent
+        <input type="text" name="parent" value="{% if parent %}{{ parent }}{% endif %}" readonly/>
+      </label>
+      <br/>
+
+      <label>내 번호로 사전등록한 사람수
+        <input type="text" name="parent_count" value="" readonly>
+      </label>
+      <br/>
+
+      <button type="submit">사전등록</button>
+      <button type="button" class="btn-parent-count">내 번호로 사전 등록한 사람수</button>
+    </form>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/vendor/jquery-1.11.1.min.js') }}"><\/script>')</script>
+    <script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+  </body>
+</html>
