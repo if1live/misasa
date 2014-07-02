@@ -6,6 +6,7 @@
       version: 'v2.0'
     });
   };
+  Kakao.init(KAKAO_API_KEY);
 
   function createShareData() {
     var url = 'http://google.com/'; 
@@ -35,6 +36,24 @@
     });
   }
 
+  function createKakaoTalkLink() {
+    data = createShareData();
+    // 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+    Kakao.Link.createTalkLinkButton({
+      container: '#kakao-link-btn',
+      label: data.title,
+      image: {
+        src: data.imageurl,
+        width: '300',
+        height: '200'
+      },
+      webButton: {
+        text: data.title,
+        url: data.url
+      }
+    });
+  }
+
   function executeFBShare() {
     data = createShareData();
     FB.ui({
@@ -45,6 +64,7 @@
 
   document.querySelector('.btn-kakao-story-link').onclick = executeKakaoStoryLink;
   document.querySelector('.btn-fb-share').onclick = executeFBShare;
+  createKakaoTalkLink();
 
   function validatePhoneNumber(val) {
     var numCount = 0;

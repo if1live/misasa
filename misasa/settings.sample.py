@@ -9,3 +9,4 @@ VALID_IP_LIST = [
 
 BITLY_TOKEN = 'foo'
 FACEBOOK_APP_ID = 'app-id'
+KAKAO_API_KEY = 'app-key'

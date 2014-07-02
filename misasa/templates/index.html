@@ -7,6 +7,13 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- open graph -->
+    <meta property="og:title" content="5분 실험실"/>
+    <meta property="og:url" content="{{ request.base_url }}"/>
+    <meta property="og:image" content="http://m1.daumcdn.net/photo-media/201209/27/ohmynews/R_430x0_20120927141307222.jpg"/>
+    <meta property="og:description" content="5분 실험실 - 내용"/>
+    <meta property="og:type" content="website"/>
+
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
@@ -16,6 +23,7 @@
     <script>
       <!-- 외부 js에서 사용하는 변수를 미리 할당 -->
       var FACEBOOK_APP_ID = {{ config['FACEBOOK_APP_ID']|tojson }};
+      var KAKAO_API_KEY = {{ config['KAKAO_API_KEY']|tojson }};
     </script>
   </head>
   <body>
@@ -49,6 +57,9 @@
       <br/>
 
       <button type="button" class="btn-kakao-story-link">카카오스토리</button><br/>
+      <a id="kakao-link-btn" href="javascript:;">
+        <img src="http://dn.api1.kage.kakao.co.kr/14/dn/btqa9B90G1b/GESkkYjKCwJdYOkLvIBKZ0/o.jpg" />
+      </a>
       <button type="button" class="btn-fb-share">FB?</button><br/>
     </form>
 
@@ -70,6 +81,7 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='kakaolink/kakao.link.js') }}"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
