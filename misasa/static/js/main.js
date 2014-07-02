@@ -1,4 +1,51 @@
 (function() {
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId: FACEBOOK_APP_ID,
+      xfbml: true,
+      version: 'v2.0'
+    });
+  };
+
+  function createShareData() {
+    var url = 'http://google.com/'; 
+    return {
+      url: url,
+      appid: 'como.5minlab.com',
+      appname: '5분실험실',
+      title: '제목 - 5분실험실',
+      desc: '상세설명 - 5분실험실',
+      imageurl: 'http://m1.daumcdn.net/photo-media/201209/27/ohmynews/R_430x0_20120927141307222.jpg'
+    }
+  }
+
+  function executeKakaoStoryLink() {
+    data = createShareData();
+    kakao.link("story").send({
+      post: data.url,
+      appid: data.appid,
+      appver: "1.0",
+      appname: data.appname,
+      urlinfo: JSON.stringify({
+        title: data.title, 
+        desc: data.desc, 
+        imageurl: [data.imageurl], 
+        type: "article"
+      })
+    });
+  }
+
+  function executeFBShare() {
+    data = createShareData();
+    FB.ui({
+      method: 'share',
+      href: data.url,
+    }, function(response){});
+  }
+
+  document.querySelector('.btn-kakao-story-link').onclick = executeKakaoStoryLink;
+  document.querySelector('.btn-fb-share').onclick = executeFBShare;
+
   function validatePhoneNumber(val) {
     var numCount = 0;
     for(var i = 0 ; i < val.length ; ++i) {
