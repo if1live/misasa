@@ -3,8 +3,11 @@
 from sqlalchemy import types, Column
 from misasa.app import Base
 
-# 전화번호는 - 없이 숫자만 저장한다. 설마 앞자리 4자리인 폰번호는 없겟지?
-PHONE_LENGTH = 3 + 4 + 4
+u"""
+전화번호는 - 없이 숫자만 저장한다. 설마 앞자리 4자리인 폰번호는 없겟지?
+010으로 전화번호가 확정되서 010은 날렸다.
+"""
+PHONE_LENGTH = 4 + 4
 
 class PreRegistrationLog(Base):
     __tablename__ = 'pre_registration_log'

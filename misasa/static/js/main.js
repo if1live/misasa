@@ -83,7 +83,7 @@
     if(i !== val.length) {
       return false;
     }
-    if(numCount === (3 + 3 + 4) || numCount === (3 + 4 + 4)) {
+    if(numCount === (3 + 4) || numCount === (4 + 4)) {
       return true;
     }
     return false;
