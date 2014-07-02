@@ -1,5 +1,5 @@
-flask
-sqlalchemy
-nose
-flask-superadmin
-bitly_api
+flask==0.10.1
+sqlalchemy==0.9.6
+flask-superadmin==1.7.1
+bitly_api==0.3
+
