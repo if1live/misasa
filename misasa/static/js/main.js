@@ -8,63 +8,64 @@
   };
   Kakao.init(KAKAO_API_KEY);
 
-  function createShareData() {
-    var url = 'http://google.com/'; 
-    return {
-      url: url,
-      appid: 'como.5minlab.com',
-      appname: '5분실험실',
-      title: '제목 - 5분실험실',
-      desc: '상세설명 - 5분실험실',
-      imageurl: 'http://m1.daumcdn.net/photo-media/201209/27/ohmynews/R_430x0_20120927141307222.jpg'
+  function createShareURL() {
+    var url = 'http://como.5minlab.com';
+
+    var rawPhone = $('form[name=form-pre-registration] [name=phone]').val();
+    var phone = filterPhoneNumber(rawPhone);
+    if(phone.length !== '') {
+      url = url + '/' + phone;
     }
+    //console.log(url);
+    return url;
+  }
+
+  function createTitleImageURL() {
+    var url = '/static/images/shared-badge/badge.jpg';
+    return url
   }
 
   function executeKakaoStoryLink() {
-    data = createShareData();
     kakao.link("story").send({
-      post: data.url,
-      appid: data.appid,
+      post: createShareURL(),
+      appid: 'como.5minlab.com',
       appver: "1.0",
-      appname: data.appname,
+      appname: '꼬모:냥이 추적자',
       urlinfo: JSON.stringify({
-        title: data.title, 
-        desc: data.desc, 
-        imageurl: [data.imageurl], 
+        title: '꼬모:냥이 추적자', 
+        desc: '게임인재단 3회 대상 수상작! 꼬모:냥이 추적자에 사전등록했어요. 같이 즐기고 선물도 받아요~!', 
+        imageurl: [createTitleImageURL()], 
         type: "article"
       })
     });
   }
 
-  function createKakaoTalkLink() {
-    data = createShareData();
-    // 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
-    Kakao.Link.createTalkLinkButton({
-      container: '#kakao-link-btn',
-      label: data.title,
+  function executeKakaoTalkLink() {
+    Kakao.Link.sendTalkLink({
+      label: '게임인재단 3회 대상 수상작! 꼬모:냥이 추적자에 사전등록했어요. 같이 즐기고 선물도 받아요~!',
       image: {
-        src: data.imageurl,
-        width: '300',
-        height: '200'
+        src: createTitleImageURL(),
+        width: '270',
+        height: '270'
       },
       webButton: {
-        text: data.title,
-        url: data.url
+        text: '나도 사전등록하러 가기~',
+        url: createShareURL()
       }
     });
   }
 
   function executeFBShare() {
-    data = createShareData();
     FB.ui({
       method: 'share',
-      href: data.url,
+      href: createTitleImageURL(),
     }, function(response){});
   }
 
   document.querySelector('.btn-kakao-story-link').onclick = executeKakaoStoryLink;
   document.querySelector('.btn-fb-share').onclick = executeFBShare;
-  createKakaoTalkLink();
+  //createKakaoTalkLink();
+  document.querySelector('.btn-kakao-talk-link').onclick - executeKakaoTalkLink;
 
   function validatePhoneNumber(val) {
     var numCount = 0;
@@ -100,9 +101,20 @@
     return numList.join('');
   }
 
-  $('.form-pre-registration').submit(function() {
+  $('form[name=form-pre-registration]').submit(function() {
     if(!validatePhoneNumber(this.phone.value)) {
       alert('휴대폰 번호를 다시 확인해주세요.');
+      return false;
+    }
+
+    var agreementList = $(this).find('[name=agreement]:checked');
+    if(agreementList.length === 0) {
+      alert('약관에 동의해주세요.');
+      return false;
+    }
+
+    if(filterPhoneNumber(this.phone.value) === filterPhoneNumber(this.parent.value)) {
+      alert('자신을 추천할수 없습니다.');
       return false;
     }
 
@@ -121,7 +133,7 @@
   });
 
   $('.btn-parent-count').click(function() {
-    var form = document.forms[0];
+    var form = this.form;
     if(!validatePhoneNumber(form.phone.value)) {
       alert('휴대폰 번호를 다시 확인해주세요.');
       return false;
@@ -136,5 +148,14 @@
         alert(data.message);
       }
     })
+  })
+
+  $('.label-agreement').click(function(evt) {
+    evt.preventDefault();
+
+    var cbs = $('form[name=form-pre-registration] [type=checkbox]');    
+    cbs.prop("checked", !cbs.prop("checked"));
+
+    $(this).find('i').toggleClass('sprite-segments-check');
   })
 })();
