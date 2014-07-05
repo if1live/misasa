@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- open graph -->
-    <meta property="og:title" content="꼬모:냥이 추적자"/>
+    <meta property="og:title" content="꼬모:냥이 추적자 사전등록"/>
     <meta property="og:url" content="{{ request.base_url }}"/>
     <meta property="og:image" content="http://{{ request.host }}{{ url_for('static', filename='images/shared-badge/badge.jpg') }}"/>
     <meta property="og:description" content="게임인재단 3회 대상 수상작! 꼬모:냥이 추적자에 사전등록했어요. 같이 즐기고 선물도 받아요~! #꼬모"/>
@@ -44,11 +44,11 @@
         </select>
 
         <label><span hidden>phone</span>
-          <input type="text" name="phone" value=""/>
+          <input type="text" name="phone" value="" placeholder="내 번호 입력"/>
         </label>
 
         <label><span hidden>parent</span>
-          <input type="text" name="parent" value="{% if parent %}{{ parent }}{% endif %}"/>
+          <input type="text" name="parent" value="{% if parent %}{{ parent }}{% endif %}" placeholder="(선택사항) 사전예약 페이지 추천한 친구 번호를 입력"/>
         </label>
 
         <label for="agreement" class="label-agreement">

@@ -64,7 +64,6 @@
 
   document.querySelector('.btn-kakao-story-link').onclick = executeKakaoStoryLink;
   document.querySelector('.btn-fb-share').onclick = executeFBShare;
-  //createKakaoTalkLink();
   document.querySelector('.btn-kakao-talk-link').onclick - executeKakaoTalkLink;
 
   function validatePhoneNumber(val) {
