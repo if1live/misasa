@@ -1,0 +1,69 @@
+﻿/* glue: 0.9.4 hash: 8a11a60176 */
+        .sprite-segments-cheer_btn,
+.sprite-segments-apply_btn,
+.sprite-segments-refercount_btn,
+.sprite-segments-kt_btn,
+.sprite-segments-ks_btn,
+.sprite-segments-fb_btn,
+.sprite-segments-check {
+            background-image: url('segments.png');
+            background-repeat: no-repeat;
+        }
+        
+        .sprite-segments-cheer_btn {
+            background-position: 0 0;
+            width: 758px;
+            height: 114px;
+        }
+        
+        .sprite-segments-apply_btn {
+            background-position: 0 -114px;
+            width: 758px;
+            height: 114px;
+        }
+        
+        .sprite-segments-refercount_btn {
+            background-position: 0 -228px;
+            width: 350px;
+            height: 74px;
+        }
+        
+        .sprite-segments-kt_btn {
+            background-position: 0 -302px;
+            width: 132px;
+            height: 132px;
+        }
+        
+        .sprite-segments-ks_btn {
+            background-position: -132px -302px;
+            width: 132px;
+            height: 132px;
+        }
+        
+        .sprite-segments-fb_btn {
+            background-position: -264px -302px;
+            width: 132px;
+            height: 132px;
+        }
+        
+        .sprite-segments-check {
+            background-position: -350px -228px;
+            width: 23px;
+            height: 22px;
+        }
+        
+        @media screen and (-webkit-min-device-pixel-ratio: 1.0), screen and (min--moz-device-pixel-ratio: 1.0), screen and (-o-min-device-pixel-ratio: 100/100), screen and (min-device-pixel-ratio: 1.0), screen and (min-resolution: 1.0dppx) {
+            .sprite-segments-cheer_btn,
+    .sprite-segments-apply_btn,
+    .sprite-segments-refercount_btn,
+    .sprite-segments-kt_btn,
+    .sprite-segments-ks_btn,
+    .sprite-segments-fb_btn,
+    .sprite-segments-check {
+                background-image: url('segments.png');
+                -webkit-background-size: 758px 434px;
+                -moz-background-size: 758px 434px;
+                background-size: 758px 434px;
+            }
+        }
+        

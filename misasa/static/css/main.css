@@ -98,18 +98,188 @@ textarea {
    ========================================================================== */
 
 
+.background-pc {
+    position: relative;
+    width: 960px;
+    height: 7673px;
+    margin: 0 auto;
+    background: url('/static/images/bg/bg.jpg') no-repeat center top;
+}
 
 
+.disqus-wrapper {
+    width: 960px;
+    padding-top: 20px;
+    margin: 0 auto;
+}
 
 
+.btn-image {
+    /* Structure */
+    display: inline-block;
+    *display: inline; /*IE 6/7*/
+    zoom: 1;
+
+    line-height: normal;
+    white-space: nowrap;
+    vertical-align: baseline;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+
+    border: 1px solid #999;  /*IE 6/7/8*/
+    border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
+
+    text-indent: -10000px;
+}
+
+/* TODO 좌표 세부 조정은 셀프 */
+.btn-pc-fb {
+    position: absolute;
+    top: 4330px;
+    left: 305px;
+}
+.btn-pc-kakaotalk {
+    position: absolute;
+    top: 4330px;
+    left: 473px;
+}
+.btn-pc-kakaostory {
+    position: absolute;
+    top: 4330px;
+    left: 655px;
+}
+
+/*
+absolute + center align
+http://stackoverflow.com/questions/1776915/how-to-center-absolute-element-in-div
+*/
+.btn-pc-cheer {
+    position: absolute;
+    top: 5950px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* form 기본값 */
+form input[type=text] {
+    /*
+    디자인 완료후 풀기 
+    */
+    border: none;
+    font-size: 24px;
+    height: 30px;
+}
+
+form[name=form-pre-registration] {
+    position: absolute;
+    top: 3250px;
+    left: 0;
+    width: 960px;
+}
+form[name=form-pre-registration] select[name=os_type] {
+    position: absolute;
+    top: 18px;
+    left: 111px;
+    background: #684728;
+    color: #fff;
+    font-size: 30px;
+    height: 40px;
+    border: none;
+}
+
+form[name=form-pre-registration] input[name=phone] {
+    position: absolute;
+    top: 21px;
+    width: 119px;
+    left: 338px;
+}
+form[name=form-pre-registration] input[name=parent] {
+    position: absolute;
+    top: 21px;
+    width: 240px;
+    left: 590px;
+}
+
+form[name=form-pre-registration] .label-agreement {
+    position: absolute;
+    top: 106px;
+    left: 276px;
+    display: block;
+    width: 406px;
+    height: 77px;
+}
+form[name=form-pre-registration] .label-agreement .sprite-segments-check{
+    position: relative;
+    top: 16px;
+    left: 15px;
+}
+
+form[name=form-pre-registration] .label-agreement [type=checkbox] {
+    display: none;
+}
+
+/*
+form[name=form-pre-registration] [type=checkbox] {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #f00;
+    width: 100px;
+    height: 100px;
+    display: block;
+
+    padding: 0;
+    background: url(/static/segments/check.png) no-repeat;;
+    cursor: pointer;
+}
+form[name=form-pre-registration] [type=checkbox]:checked {
+    background-color: #0f0;
+}
+*/
+
+form[name=form-pre-registration] [type=submit] {
+    position: absolute;
+    top: 200px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
+form[name=form-refcount-pc] {
+    position: absolute;
+    top: 6787px;
+    left: 0;
+}
+form[name=form-refcount-pc] input[name=parent_count] {
+    position: absolute;
+    top: 21px;
+    left: 739px;
+    width: 43px;
+    text-align: right;
+    /* height: 30px; */
+}
+form[name=form-refcount-pc] input[name=phone] {
+    position: absolute;
+    top: 21px;
+    left: 205px;
+    width: 141px;
+}
 
-
-
-
-
-
+.btn-parent-count {
+    position: absolute;
+    top: 0;
+    left: 368px;
+}
 
 
 

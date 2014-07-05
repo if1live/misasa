@@ -58,7 +58,7 @@
   function executeFBShare() {
     FB.ui({
       method: 'share',
-      href: createTitleImageURL(),
+      href: createShareURL()
     }, function(response){});
   }
 
