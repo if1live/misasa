@@ -62,9 +62,18 @@
     }, function(response){});
   }
 
-  document.querySelector('.btn-kakao-story-link').onclick = executeKakaoStoryLink;
-  document.querySelector('.btn-fb-share').onclick = executeFBShare;
-  document.querySelector('.btn-kakao-talk-link').onclick - executeKakaoTalkLink;
+  var kakaostroyNode = document.querySelector('.btn-kakao-story-link');
+  if(kakaostroyNode) {
+    kakaostroyNode.onclick = executeKakaoStoryLink;
+  }
+  var fbNode = document.querySelector('.btn-fb-share');
+  if(fbNode) {
+    fbNode.onclick = executeFBShare;
+  }
+  var kakaotalkNode = document.querySelector('.btn-kakao-talk-link');
+  if(kakaotalkNode) {
+    kakaotalkNode.onclick - executeKakaoTalkLink;
+  }
 
   function validatePhoneNumber(val) {
     var numCount = 0;

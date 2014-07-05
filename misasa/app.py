@@ -2,9 +2,12 @@
 
 import flask as fl
 from misasa import settings
+from flask_mobility import Mobility
 
 app = fl.Flask(__name__)
 app.config.from_object(settings)
+
+Mobility(app)
 
 # sqlalchemy
 from sqlalchemy import create_engine

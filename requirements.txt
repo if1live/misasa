@@ -3,3 +3,4 @@ sqlalchemy==0.9.6
 flask-superadmin==1.7.1
 bitly_api==0.3
 glue==0.9.4
+Flask-Mobility==0.1.1

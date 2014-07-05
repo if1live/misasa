@@ -1,138 +1,73 @@
-<!doctype html>
-<html class="no-js" lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>꼬모:냥이 추적자</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends 'skeleton.html' %}
+{% import '_macros.html' as macros %}
 
-    <!-- open graph -->
-    <meta property="og:title" content="꼬모:냥이 추적자 사전등록"/>
-    <meta property="og:url" content="{{ request.base_url }}"/>
-    <meta property="og:image" content="http://{{ request.host }}{{ url_for('static', filename='images/shared-badge/badge.jpg') }}"/>
-    <meta property="og:description" content="게임인재단 3회 대상 수상작! 꼬모:냥이 추적자에 사전등록했어요. 같이 즐기고 선물도 받아요~! #꼬모"/>
-    <meta property="og:type" content="website"/>
+{% block head_css %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
 
-    <!-- favicon -->
-    <link rel="shortcut icon" href="http://{{ request.host }}{{ url_for('static', filename='images/favicon.ico') }}" />
+{% block content %}
+{#
+PC의 경우는 배경이미지 깔고 그 위에 필요한 항목을 올린다
+가변폭을 고려하지 않았기때문이 이것이 유일한 해결책이다
+#}
+<div class="background-pc">
+  <form method="POST" action="{{ url_for('api_register_user') }}" name="form-pre-registration">
+    <select name="os_type">
+      <option value="a">Android</option>
+      <option value="i">iPhone</option>
+    </select>
 
-    <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+    <label><span hidden>phone</span>
+      <input type="text" name="phone" value=""/>
+    </label>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='sprites/segments.css') }}">
-    <script src="{{ url_for('static', filename='js/vendor/modernizr-2.6.2.min.js') }}"></script>
+    <label><span hidden>parent</span>
+      <input type="text" name="parent" value="{% if parent %}{{ parent }}{% endif %}"/>
+    </label>
 
-    <script>
-      <!-- 외부 js에서 사용하는 변수를 미리 할당 -->
-      var FACEBOOK_APP_ID = {{ config['FACEBOOK_APP_ID']|tojson }};
-      var KAKAO_API_KEY = {{ config['KAKAO_API_KEY']|tojson }};
-    </script>
-  </head>
-  <body>
+    <label for="agreement" class="label-agreement">
+      <i class="btn-image "></i>
+    <input type="checkbox" id="agreement" name="agreement"/>
+    </label>
 
-    {#
-    PC의 경우는 배경이미지 깔고 그 위에 필요한 항목을 올린다
-    가변폭을 고려하지 않았기때문이 이것이 유일한 해결책이다
-    #}
-    <div class="background-pc">
-      <form method="POST" action="{{ url_for('api_register_user') }}" name="form-pre-registration">
-        <select name="os_type">
-          <option value="a">Android</option>
-          <option value="i">iPhone</option>
-        </select>
+    <button type="submit" class="btn-image sprite-segments-apply_btn">
+      사전 등록 신청
+    </button>
 
-        <label><span hidden>phone</span>
-          <input type="text" name="phone" value=""/>
-        </label>
+  </form>
 
-        <label><span hidden>parent</span>
-          <input type="text" name="parent" value="{% if parent %}{{ parent }}{% endif %}"/>
-        </label>
+  <a class="btn-fb-share sprite-segments-fb_btn btn-image btn-pc-fb" href="javascript:;">
+    페이스북
+  </a>
+  <a class="btn-kakao-talk-link sprite-segments-kt_btn btn-image btn-pc-kakaotalk" href="javascript:;" >
+    카카오톡
+  </a>
+  <a class="btn-kakao-story-link sprite-segments-ks_btn btn-image btn-pc-kakaostory" href="javascript:;">
+    카카오스토리
+  </a>
 
-        <label for="agreement" class="label-agreement">
-          <i class="btn-image "></i>
-        <input type="checkbox" id="agreement" name="agreement"/>
-        </label>
+  <a href="#disqus_thread" class="sprite-segments-cheer_btn btn-image btn-pc-cheer">
+    응원댓글 남기기
+  </a>
 
-        <button type="submit" class="btn-image sprite-segments-apply_btn">
-          사전 등록 신청
-        </button>
+  <form name="form-refcount-pc">
+  <label><span hidden>전화번호</span>
+    <input type="text" name="phone" value="" maxlength="9" placeholder="내 번호 입력"/>
+  </label>
+  <button type="button" class="btn-parent-count sprite-segments-refercount_btn btn-image">
+    내 번호로 사전 등록한 사람수
+  </button>
+  <label><span hidden>내 번호로 사전등록한 사람수</span>
+    <input type="text" name="parent_count" value="-" readonly>
+  </label>
 
-      </form>
+  </form>
+</div>
+{% endblock %}
 
-      <a class="btn-fb-share sprite-segments-fb_btn btn-image btn-pc-fb" href="javascript:;">
-        페이스북
-      </a>
-      <a class="btn-kakao-talk-link sprite-segments-kt_btn btn-image btn-pc-kakaotalk" href="javascript:;" >
-        카카오톡
-      </a>
-      <a class="btn-kakao-story-link sprite-segments-ks_btn btn-image btn-pc-kakaostory" href="javascript:;">
-        카카오스토리
-      </a>
-
-      <a href="#disqus_thread" class="sprite-segments-cheer_btn btn-image btn-pc-cheer">
-        응원댓글 남기기
-      </a>
-
-      <form name="form-refcount-pc">
-      <label><span hidden>전화번호</span>
-        <input type="text" name="phone" value="" maxlength="9" placeholder="내 번호 입력"/>
-      </label>
-      <button type="button" class="btn-parent-count sprite-segments-refercount_btn btn-image">
-        내 번호로 사전 등록한 사람수
-      </button>
-      <label><span hidden>내 번호로 사전등록한 사람수</span>
-        <input type="text" name="parent_count" value="-" readonly>
-      </label>
-
-      </form>
-    </div>
-
-
-    <div class="disqus-wrapper">
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'preregister'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
-
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='kakaolink/kakao.link.js') }}"></script>
-    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-    <script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-
-    <!-- facebook sdk -->
-    <script>
-    (function(d, s, id){
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-    e.src='//www.google-analytics.com/analytics.js';
-    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-    ga('create','UA-52496180-1');ga('send','pageview');
-    </script>
-  </body>
-</html>
+{% block disqus_content %}
+<div class="disqus-wrapper">
+{{ macros.render_disqus() }}
+</div>
+{% endblock %}

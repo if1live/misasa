@@ -1,4 +1,5 @@
 SECRET_KEY = 'foobar'
+DEBUG = False
 
 DB_URI = 'sqlite:///simple.db'
 DB_ECHO = False

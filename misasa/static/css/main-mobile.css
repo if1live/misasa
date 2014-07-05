@@ -97,27 +97,64 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
-.background-pc {
-    position: relative;
-    width: 960px;
-    height: 7673px;
-    margin: 0 auto;
-    background: url('/static/images/bg/bg.jpg') no-repeat center top;
+.background-mobile {
+    width: 100%;
 }
-
-
-.disqus-wrapper {
-    width: 960px;
-    padding-top: 20px;
+.disqus-wrapper-mobile {
+    padding: 20px 10px;
     margin: 0 auto;
 }
 
+.pre-registration-wrapper {
+    background-color: #d0e759;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin: 0 4.4%%;
+}
+
+.pre-registration-wrapper .form-group {
+    display: block;
+    padding: 5px 10%;
+}
+
+.pre-registration-wrapper .img-wrapper {
+    text-align: center;
+    padding: 20px 0;
+}
+.pre-registration-wrapper .img-pre-registration-submit {
+    width: 80%;
+}
+
+.cheer-wrapper {
+    background-color: #c3e3f2;
+    margin: 0 4.4%%;
+    text-align: center;
+}
+.cheer-wrapper img {
+    width: 90%;
+}
+
+.refcount-wrapper {
+    background-color: #45a6ed;
+}
+.refcount-wrapper [name=parent_count] {
+    width: 40px;
+    text-align: right;
+}
+.refcount-wrapper .form-group {
+    padding: 5px 10% ;
+}
+.refcount-wrapper .img-wrapper {
+    text-align: center;
+    padding: 10px 0;
+}
+.refcount-wrapper .img-wrapper * {
+    width: 80%;
+}
 
 .btn-image {
-    /* Structure */
     display: inline-block;
-    *display: inline; /*IE 6/7*/
+    *display: inline;
     zoom: 1;
 
     background-color: transparent;
@@ -134,13 +171,13 @@ textarea {
     user-select: none;
     text-decoration: none;
 
-    border: 1px solid #999;  /*IE 6/7/8*/
-    border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
+    border: 1px solid #999;
+    border: none rgba(0, 0, 0, 0);
 
     text-indent: -10000px;
 }
 
-/* TODO 좌표 세부 조정은 셀프 */
+/*
 .btn-pc-fb {
     position: absolute;
     top: 4305px;
@@ -157,10 +194,6 @@ textarea {
     left: 655px;
 }
 
-/*
-absolute + center align
-http://stackoverflow.com/questions/1776915/how-to-center-absolute-element-in-div
-*/
 .btn-pc-cheer {
     position: absolute;
     top: 5950px;
@@ -170,11 +203,7 @@ http://stackoverflow.com/questions/1776915/how-to-center-absolute-element-in-div
     margin-right: auto;
 }
 
-/* form 기본값 */
 form input[type=text] {
-    /*
-    디자인 완료후 풀기 
-    */
     border: none;
     font-size: 24px;
     height: 30px;
@@ -228,25 +257,6 @@ form[name=form-pre-registration] .label-agreement [type=checkbox] {
     display: none;
 }
 
-/*
-form[name=form-pre-registration] [type=checkbox] {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: #f00;
-    width: 100px;
-    height: 100px;
-    display: block;
-
-    padding: 0;
-    background: url(/static/segments/check.png) no-repeat;;
-    cursor: pointer;
-}
-form[name=form-pre-registration] [type=checkbox]:checked {
-    background-color: #0f0;
-}
-*/
-
 form[name=form-pre-registration] [type=submit] {
     position: absolute;
     top: 200px;
@@ -268,7 +278,6 @@ form[name=form-refcount-pc] input[name=parent_count] {
     left: 739px;
     width: 43px;
     text-align: right;
-    /* height: 30px; */
 }
 form[name=form-refcount-pc] input[name=phone] {
     position: absolute;
@@ -283,6 +292,7 @@ form[name=form-refcount-pc] input[name=phone] {
     left: 368px;
 }
 
+*/
 
 /* ==========================================================================
    Helper classes

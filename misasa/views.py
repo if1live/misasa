@@ -6,6 +6,7 @@ from misasa.app import app, db
 from .models import PreRegistrationLog
 from misasa import constants
 from sqlalchemy import func
+from flask_mobility.decorators import mobile_template
 
 
 class MisasaException(Exception):
@@ -62,10 +63,11 @@ def api_parent_count():
 
 @app.route('/')
 @app.route('/<parent>')
-def view_index(parent=None):
+@mobile_template('index{_mobile}.html')
+def view_index(template, parent=None):
     if parent is None:
         parent = fl.request.args.get('p', None)
-    return fl.render_template('index.html', parent=parent)
+    return fl.render_template(template, parent=parent)
 
 @app.route('/dev/')
 def view_dev():

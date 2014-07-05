@@ -1,0 +1,87 @@
+{% extends 'skeleton.html' %}
+{% import '_macros.html' as macros %}
+
+{% block head_css %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main-mobile.css') }}">
+{% endblock %}
+
+{% block content %}
+<img src="{{ url_for('static', filename='images/bg-tiled/bg00.jpg') }}" class="background-mobile"/>
+<img src="{{ url_for('static', filename='images/bg-tiled/bg01.jpg') }}" class="background-mobile"/>
+<img src="{{ url_for('static', filename='images/bg-tiled/bg02.jpg') }}" class="background-mobile"/>
+<img src="{{ url_for('static', filename='images/bg-tiled/bg03.jpg') }}" class="background-mobile"/>
+<div class="pre-registration-wrapper">
+  <form method="POST" action="{{ url_for('api_register_user') }}" name="form-pre-registration">
+
+  <div class="form-group">
+  <select name="os_type">
+    <option value="a">Android</option>
+    <option value="i">iPhone</option>
+  </select>
+
+  <label><span>내 번호 입력</span><br/>
+    010-<input type="tel" name="phone" value=""/>
+  </label>
+  </div>
+
+  <div class="form-group">
+  <label><span>(선택사항)사전 예약을 추천한 친구 번호를 입력</span><br/>
+    010-<input type="tel" name="parent" value="{% if parent %}{{ parent }}{% endif %}"/>
+  </label>
+  </div>
+
+  <div class="form-group">
+  <label>
+    <input type="checkbox" name="agreement"/>
+    개인정보 수집 및 SMS 수신에 동의합니다.<br/>
+    (타인의 휴대폰 정보 도용시 법적인 책임은 본인에 있습니다.)
+  </label>
+  </div>
+
+  <div class="img-wrapper">
+  <input type="image" src="{{ url_for('static', filename='segments/apply_btn.png') }}" class="img-pre-registration-submit"/>
+  </div>
+
+  </form>
+</div>
+<img src="{{ url_for('static', filename='images/bg-tiled/bg04.jpg') }}" class="background-mobile"/>
+<img src="{{ url_for('static', filename='images/bg-tiled/bg05.jpg') }}" class="background-mobile"/>
+
+<div class="cheer-wrapper">
+  <a href="#disqus_thread">
+    <img src="{{ url_for('static', filename='segments/cheer_btn.png') }}"/>
+    <span hidden>응원댓글 남기기</span>
+  </a>
+</div>
+
+<img src="{{ url_for('static', filename='images/bg-tiled/bg06.jpg') }}" class="background-mobile"/>
+<div class="refcount-wrapper">
+  <form name="form-refcount-pc">
+  <div class="form-group">
+  <label><span hidden>전화번호</span>
+    010-<input type="tel" name="phone" value="" maxlength="9" placeholder="내 번호 입력"/>
+  </label>
+  </div>
+
+  <div class="form-group">
+  <label><span hidden>내 번호로 사전등록한 사람수</span>
+    <input type="tel" name="parent_count" value="-" readonly>명이 날 추천했습니다.
+  </label>
+  </div>
+
+  <div class="img-wrapper">
+  <input type="image" class="btn-parent-count" src="{{ url_for('static', filename='segments/refercount_btn.png') }}" alt="내 번호로 사전 등록한 사람수"/>
+  </div>
+
+  </form>
+</div>
+<img src="{{ url_for('static', filename='images/bg-tiled/bg07.jpg') }}" class="background-mobile"/>
+{% endblock %}
+
+
+{% block disqus_content %}
+<div class="disqus-wrapper-mobile">
+{{ macros.render_disqus() }}
+</div>
+{% endblock %}
