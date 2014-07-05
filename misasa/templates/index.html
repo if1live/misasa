@@ -44,11 +44,11 @@
         </select>
 
         <label><span hidden>phone</span>
-          <input type="text" name="phone" value="" placeholder="내 번호 입력"/>
+          <input type="text" name="phone" value=""/>
         </label>
 
         <label><span hidden>parent</span>
-          <input type="text" name="parent" value="{% if parent %}{{ parent }}{% endif %}" placeholder="(선택사항) 사전예약 페이지 추천한 친구 번호를 입력"/>
+          <input type="text" name="parent" value="{% if parent %}{{ parent }}{% endif %}"/>
         </label>
 
         <label for="agreement" class="label-agreement">
