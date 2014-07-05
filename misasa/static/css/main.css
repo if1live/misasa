@@ -120,6 +120,8 @@ textarea {
     *display: inline; /*IE 6/7*/
     zoom: 1;
 
+    background-color: transparent;
+
     line-height: normal;
     white-space: nowrap;
     vertical-align: baseline;
@@ -141,17 +143,17 @@ textarea {
 /* TODO 좌표 세부 조정은 셀프 */
 .btn-pc-fb {
     position: absolute;
-    top: 4330px;
+    top: 4305px;
     left: 305px;
 }
 .btn-pc-kakaotalk {
     position: absolute;
-    top: 4330px;
+    top: 4305px;
     left: 473px;
 }
 .btn-pc-kakaostory {
     position: absolute;
-    top: 4330px;
+    top: 4305px;
     left: 655px;
 }
 
@@ -198,7 +200,7 @@ form[name=form-pre-registration] select[name=os_type] {
 form[name=form-pre-registration] input[name=phone] {
     position: absolute;
     top: 21px;
-    width: 119px;
+    width: 180px;
     left: 338px;
 }
 form[name=form-pre-registration] input[name=parent] {
