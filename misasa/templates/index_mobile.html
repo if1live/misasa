@@ -13,20 +13,25 @@
 <img src="{{ url_for('static', filename='images/bg-tiled/bg03.jpg') }}" class="background-mobile"/>
 <div class="pre-registration-wrapper">
   <form method="POST" action="{{ url_for('api_register_user') }}" name="form-pre-registration">
+  <div class="form-group">
+  <strong>내 번호 입력</strong>
+  </div>
 
   <div class="form-group">
+  <label>
+  010-<input type="tel" name="phone" value=""/>
+  </label>
   <select name="os_type">
     <option value="a">Android</option>
     <option value="i">iPhone</option>
   </select>
-
-  <label><span>내 번호 입력</span><br/>
-    010-<input type="tel" name="phone" value=""/>
-  </label>
   </div>
 
+  <div class="form-group parent-phone-wrapper">
+    <strong>(선택사항)사전 예약을 추천한 친구 번호를 입력</strong>
+  </div>
   <div class="form-group">
-  <label><span>(선택사항)사전 예약을 추천한 친구 번호를 입력</span><br/>
+  <label>
     010-<input type="tel" name="parent" value="{% if parent %}{{ parent }}{% endif %}"/>
   </label>
   </div>
@@ -45,7 +50,22 @@
 
   </form>
 </div>
-<img src="{{ url_for('static', filename='images/bg-tiled/bg04.jpg') }}" class="background-mobile"/>
+<div class="social-link-wrapper">
+  <img src="{{ url_for('static', filename='images/bg-tiled/bg04_01.jpg') }}" class="background-mobile"/>
+  <div class="social-btn-wrapper">
+  <a class="btn-fb-share" href="javascript:;"><!--
+    --><img src="{{ url_for('static', filename='segments/fb_btn.png') }}" alt="페이스북" class="img-icon"/><!--
+  --></a>
+  <a class="btn-kakao-talk-link" href="javascript:;" >
+    <img src="{{ url_for('static', filename='segments/kt_btn.png') }}" alt="카카오톡" class="img-icon"/>
+  </a>
+  <a class="btn-kakao-story-link" href="javascript:;">
+    <img src="{{ url_for('static', filename='segments/ks_btn.png') }}" alt="카카오스토리" class="img-icon"/>
+  </a>
+  </div>
+</div>
+
+<img src="{{ url_for('static', filename='images/bg-tiled/bg04_02.jpg') }}" class="background-mobile"/>
 <img src="{{ url_for('static', filename='images/bg-tiled/bg05.jpg') }}" class="background-mobile"/>
 
 <div class="cheer-wrapper">
@@ -62,16 +82,13 @@
   <label><span hidden>전화번호</span>
     010-<input type="tel" name="phone" value="" maxlength="9" placeholder="내 번호 입력"/>
   </label>
+  <button type="submit">확인</button>
   </div>
 
   <div class="form-group">
   <label><span hidden>내 번호로 사전등록한 사람수</span>
     <input type="tel" name="parent_count" value="-" readonly>명이 날 추천했습니다.
   </label>
-  </div>
-
-  <div class="img-wrapper">
-  <input type="image" class="btn-parent-count" src="{{ url_for('static', filename='segments/refercount_btn.png') }}" alt="내 번호로 사전 등록한 사람수"/>
   </div>
 
   </form>

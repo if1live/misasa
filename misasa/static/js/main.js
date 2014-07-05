@@ -72,7 +72,7 @@
   }
   var kakaotalkNode = document.querySelector('.btn-kakao-talk-link');
   if(kakaotalkNode) {
-    kakaotalkNode.onclick - executeKakaoTalkLink;
+    kakaotalkNode.onclick = executeKakaoTalkLink;
   }
 
   function validatePhoneNumber(val) {
@@ -140,8 +140,8 @@
     return false;
   });
 
-  $('.btn-parent-count').click(function() {
-    var form = this.form;
+  $('form[name=form-refcount-pc]').submit(function() {
+    var form = this;
     if(!validatePhoneNumber(form.phone.value)) {
       alert('휴대폰 번호를 다시 확인해주세요.');
       return false;
@@ -156,6 +156,7 @@
         alert(data.message);
       }
     })
+    return false;
   })
 
   $('.label-agreement').click(function(evt) {

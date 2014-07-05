@@ -15,12 +15,12 @@ button,
 input,
 select,
 textarea {
-    color: #222;
+	color: #222;
 }
 
 html {
-    font-size: 1em;
-    line-height: 1.4;
+	font-size: 1em;
+	line-height: 1.4;
 }
 
 /*
@@ -30,13 +30,13 @@ html {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
+	background: #b3d4fc;
+	text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+	background: #b3d4fc;
+	text-shadow: none;
 }
 
 /*
@@ -44,12 +44,12 @@ html {
  */
 
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
 }
 
 /*
@@ -61,7 +61,7 @@ audio,
 canvas,
 img,
 video {
-    vertical-align: middle;
+	vertical-align: middle;
 }
 
 /*
@@ -69,9 +69,9 @@ video {
  */
 
 fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+	border: 0;
+	margin: 0;
+	padding: 0;
 }
 
 /*
@@ -79,7 +79,7 @@ fieldset {
  */
 
 textarea {
-    resize: vertical;
+	resize: vertical;
 }
 
 /* ==========================================================================
@@ -87,10 +87,10 @@ textarea {
    ========================================================================== */
 
 .browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+	margin: 0.2em 0;
+	background: #ccc;
+	color: #000;
+	padding: 0.2em 0;
 }
 
 /* ==========================================================================
@@ -98,201 +98,112 @@ textarea {
    ========================================================================== */
 
 .background-mobile {
-    width: 100%;
+	width: 100%;
 }
 .disqus-wrapper-mobile {
-    padding: 20px 10px;
-    margin: 0 auto;
+	padding: 20px 10px;
+	margin: 0 auto;
 }
 
 .pre-registration-wrapper {
-    background-color: #d0e759;
-    border-bottom-right-radius: 25px;
-    border-bottom-left-radius: 25px;
-    margin: 0 4.4%%;
+	background-color: #d0e759;
+	border-bottom-right-radius: 25px;
+	border-bottom-left-radius: 25px;
+	margin: 0 4.4% 40px 4.4%;
+}
+
+.pre-registration-wrapper .parent-phone-wrapper {
+	margin-top: 10px;
 }
 
 .pre-registration-wrapper .form-group {
-    display: block;
-    padding: 5px 10%;
+	display: block;
+	padding: 5px 10%;
+}
+.pre-registration-wrapper [name=phone],
+.pre-registration-wrapper [name=parent] {
+	width: 5em;
 }
 
 .pre-registration-wrapper .img-wrapper {
-    text-align: center;
-    padding: 20px 0;
+	text-align: center;
+	padding: 20px 0;
 }
 .pre-registration-wrapper .img-pre-registration-submit {
-    width: 80%;
+	width: 80%;
 }
 
 .cheer-wrapper {
-    background-color: #c3e3f2;
-    margin: 0 4.4%%;
-    text-align: center;
+	background-color: #c3e3f2;
+	margin: 0 4.4%%;
+	text-align: center;
 }
 .cheer-wrapper img {
-    width: 90%;
+	width: 90%;
 }
 
 .refcount-wrapper {
-    background-color: #45a6ed;
+	background-color: #45a6ed;
 }
 .refcount-wrapper [name=parent_count] {
-    width: 40px;
-    text-align: right;
+	width: 40px;
+	text-align: right;
+}
+.refcount-wrapper [name=phone] {
+	width: 8em;
 }
 .refcount-wrapper .form-group {
-    padding: 5px 10% ;
+	padding: 5px 10% ;
 }
 .refcount-wrapper .img-wrapper {
-    text-align: center;
-    padding: 10px 0;
+	text-align: center;
+	padding: 10px 0;
 }
 .refcount-wrapper .img-wrapper * {
-    width: 80%;
+	width: 80%;
 }
 
 .btn-image {
-    display: inline-block;
-    *display: inline;
-    zoom: 1;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
 
-    background-color: transparent;
+	background-color: transparent;
 
-    line-height: normal;
-    white-space: nowrap;
-    vertical-align: baseline;
-    text-align: center;
-    cursor: pointer;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    text-decoration: none;
+	line-height: normal;
+	white-space: nowrap;
+	vertical-align: baseline;
+	text-align: center;
+	cursor: pointer;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	text-decoration: none;
 
-    border: 1px solid #999;
-    border: none rgba(0, 0, 0, 0);
+	border: 1px solid #999;
+	border: none rgba(0, 0, 0, 0);
 
-    text-indent: -10000px;
-}
-
-/*
-.btn-pc-fb {
-    position: absolute;
-    top: 4305px;
-    left: 305px;
-}
-.btn-pc-kakaotalk {
-    position: absolute;
-    top: 4305px;
-    left: 473px;
-}
-.btn-pc-kakaostory {
-    position: absolute;
-    top: 4305px;
-    left: 655px;
+	text-indent: -10000px;
 }
 
-.btn-pc-cheer {
-    position: absolute;
-    top: 5950px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
+.social-link-wrapper .btn-fb-share,
+.social-link-wrapper .btn-kakao-talk-link,
+.social-link-wrapper .btn-kakao-story-link {
+	display: inline-block;
+	width: 25%;
+	height: 25%;
+	padding: 0 3%;
 }
-
-form input[type=text] {
-    border: none;
-    font-size: 24px;
-    height: 30px;
+.social-link-wrapper .img-icon {
+	width: 100%;
 }
-
-form[name=form-pre-registration] {
-    position: absolute;
-    top: 3250px;
-    left: 0;
-    width: 960px;
+.social-link-wrapper .social-btn-wrapper {
+	background-color: #3BD5F7;
+	margin: 0 4.4%;
+	text-align: center;
 }
-form[name=form-pre-registration] select[name=os_type] {
-    position: absolute;
-    top: 18px;
-    left: 111px;
-    background: #684728;
-    color: #fff;
-    font-size: 30px;
-    height: 40px;
-    border: none;
-}
-
-form[name=form-pre-registration] input[name=phone] {
-    position: absolute;
-    top: 21px;
-    width: 180px;
-    left: 338px;
-}
-form[name=form-pre-registration] input[name=parent] {
-    position: absolute;
-    top: 21px;
-    width: 240px;
-    left: 590px;
-}
-
-form[name=form-pre-registration] .label-agreement {
-    position: absolute;
-    top: 106px;
-    left: 276px;
-    display: block;
-    width: 406px;
-    height: 77px;
-}
-form[name=form-pre-registration] .label-agreement .sprite-segments-check{
-    position: relative;
-    top: 16px;
-    left: 15px;
-}
-
-form[name=form-pre-registration] .label-agreement [type=checkbox] {
-    display: none;
-}
-
-form[name=form-pre-registration] [type=submit] {
-    position: absolute;
-    top: 200px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-form[name=form-refcount-pc] {
-    position: absolute;
-    top: 6787px;
-    left: 0;
-}
-form[name=form-refcount-pc] input[name=parent_count] {
-    position: absolute;
-    top: 21px;
-    left: 739px;
-    width: 43px;
-    text-align: right;
-}
-form[name=form-refcount-pc] input[name=phone] {
-    position: absolute;
-    top: 21px;
-    left: 205px;
-    width: 141px;
-}
-
-.btn-parent-count {
-    position: absolute;
-    top: 0;
-    left: 368px;
-}
-
-*/
 
 /* ==========================================================================
    Helper classes
@@ -303,18 +214,18 @@ form[name=form-refcount-pc] input[name=phone] {
  */
 
 .ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    /* IE 6/7 fallback */
-    *text-indent: -9999px;
+	background-color: transparent;
+	border: 0;
+	overflow: hidden;
+	/* IE 6/7 fallback */
+	*text-indent: -9999px;
 }
 
 .ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 150%;
+	content: "";
+	display: block;
+	width: 0;
+	height: 150%;
 }
 
 /*
@@ -322,8 +233,8 @@ form[name=form-refcount-pc] input[name=phone] {
  */
 
 .hidden {
-    display: none !important;
-    visibility: hidden;
+	display: none !important;
+	visibility: hidden;
 }
 
 /*
@@ -331,14 +242,14 @@ form[name=form-refcount-pc] input[name=phone] {
  */
 
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
 }
 
 /*
@@ -348,12 +259,12 @@ form[name=form-refcount-pc] input[name=phone] {
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
 }
 
 /*
@@ -361,7 +272,7 @@ form[name=form-refcount-pc] input[name=phone] {
  */
 
 .invisible {
-    visibility: hidden;
+	visibility: hidden;
 }
 
 /*
@@ -378,12 +289,12 @@ form[name=form-refcount-pc] input[name=phone] {
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+	content: " "; /* 1 */
+	display: table; /* 2 */
 }
 
 .clearfix:after {
-    clear: both;
+	clear: both;
 }
 
 /*
@@ -392,7 +303,7 @@ form[name=form-refcount-pc] input[name=phone] {
  */
 
 .clearfix {
-    *zoom: 1;
+	*zoom: 1;
 }
 
 /* ==========================================================================
@@ -402,14 +313,14 @@ form[name=form-refcount-pc] input[name=phone] {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+	/* Style adjustments for viewports that meet the condition */
 }
 
 @media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
+	   (-o-min-device-pixel-ratio: 5/4),
+	   (-webkit-min-device-pixel-ratio: 1.25),
+	   (min-resolution: 120dpi) {
+	/* Style adjustments for high resolution devices */
 }
 
 /* ==========================================================================
@@ -418,68 +329,68 @@ form[name=form-refcount-pc] input[name=phone] {
    ========================================================================== */
 
 @media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+	* {
+		background: transparent !important;
+		color: #000 !important; /* Black prints faster: h5bp.com/s */
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
 
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
+	/*
+	 * Don't show links for images, or javascript/internal links
+	 */
 
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
+	.ir a:after,
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after {
+		content: "";
+	}
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
 
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
+	thead {
+		display: table-header-group; /* h5bp.com/t */
+	}
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
 
-    img {
-        max-width: 100% !important;
-    }
+	img {
+		max-width: 100% !important;
+	}
 
-    @page {
-        margin: 0.5cm;
-    }
+	@page {
+		margin: 0.5cm;
+	}
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
 }
