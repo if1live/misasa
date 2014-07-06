@@ -206,8 +206,8 @@ form[name=form-pre-registration] input[name=phone] {
 form[name=form-pre-registration] input[name=parent] {
     position: absolute;
     top: 21px;
-    width: 240px;
-    left: 590px;
+    width: 189px;
+    left: 655px;
 }
 
 form[name=form-pre-registration] .label-agreement {
