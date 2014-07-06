@@ -21,8 +21,9 @@
   }
 
   function createTitleImageURL() {
-    var url = '/static/images/shared-badge/badge.jpg';
-    return url
+    var host = 'http://como.5minlab.com';
+    var path = '/static/images/shared-badge/badge-270.jpg';
+    return host + path;
   }
 
   function executeKakaoStoryLink() {
@@ -49,7 +50,7 @@
         height: '270'
       },
       webButton: {
-        text: '나도 사전등록하러 가기~',
+        text: '사전등록하러 가기',
         url: createShareURL()
       }
     });
