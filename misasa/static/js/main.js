@@ -33,8 +33,8 @@
       appver: "1.0",
       appname: '꼬모:냥이 추적자',
       urlinfo: JSON.stringify({
-        title: '꼬모:냥이 추적자', 
-        desc: '게임인재단 3회 대상 수상작! 꼬모:냥이 추적자에 사전등록했어요. 같이 즐기고 선물도 받아요~!', 
+        title: '꼬모:냥이 추적자 사전등록', 
+        desc: '게임인재단 3회 대상 수상작! 같이 즐기고 선물도 받아요~!', 
         imageurl: [createTitleImageURL()], 
         type: "article"
       })
