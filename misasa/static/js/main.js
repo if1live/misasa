@@ -161,8 +161,10 @@
     }, function(data) {
       if(data.success) {
         alert(data.message);
+		ga('send', 'event', 'registration', 'ok');
       } else {
         alert(data.message);
+		ga('send', 'event', 'registration', 'failed');
       }
     })
     return false;
