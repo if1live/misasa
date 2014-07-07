@@ -1,4 +1,24 @@
 (function() {
+  var isMobile = {
+    Android: function() {
+      return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+      return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+      return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+      return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+      return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+    },
+    any: function() {
+      return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+  };
   window.fbAsyncInit = function() {
     FB.init({
       appId: FACEBOOK_APP_ID,
@@ -27,6 +47,9 @@
   }
 
   function executeKakaoStoryLink() {
+    if(isMobile.any()) {
+      ga('send', 'event', 'social-btn', 'kakaostory');
+    }
     kakao.link("story").send({
       post: createShareURL(),
       appid: 'como.5minlab.com',
@@ -42,6 +65,9 @@
   }
 
   function executeKakaoTalkLink() {
+    if(isMobile.any()) {
+      ga('send', 'event', 'social-btn', 'kakaotalk');
+    }
     Kakao.Link.sendTalkLink({
       label: '게임인재단 3회 대상 수상작! 꼬모:냥이 추적자에 사전등록했어요. 같이 즐기고 선물도 받아요~!',
       image: {
@@ -57,6 +83,7 @@
   }
 
   function executeFBShare() {
+    ga('send', 'event', 'social-btn', 'fb');
     FB.ui({
       method: 'share',
       href: createShareURL()
