@@ -56,3 +56,6 @@ misasa/settings.py
 *.db
 
 .idea/
+
+# Vims
+*.swp

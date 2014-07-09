@@ -5,7 +5,8 @@
 .sprite-segments-kt_btn,
 .sprite-segments-ks_btn,
 .sprite-segments-fb_btn,
-.sprite-segments-check {
+.sprite-segments-check,
+.sprite-segments-home_btn {
             background-image: url('segments.png');
             background-repeat: no-repeat;
         }
@@ -51,6 +52,12 @@
             width: 23px;
             height: 22px;
         }
+
+        .sprite-segments-home_btn {
+            background-position: -380px -228px;
+            width: 350px;
+            height: 74px;
+        }
         
         @media screen and (-webkit-min-device-pixel-ratio: 1.0), screen and (min--moz-device-pixel-ratio: 1.0), screen and (-o-min-device-pixel-ratio: 100/100), screen and (min-device-pixel-ratio: 1.0), screen and (min-resolution: 1.0dppx) {
             .sprite-segments-cheer_btn,
@@ -59,7 +66,8 @@
     .sprite-segments-kt_btn,
     .sprite-segments-ks_btn,
     .sprite-segments-fb_btn,
-    .sprite-segments-check {
+    .sprite-segments-check,
+	.sprite-segments-home_btn {
                 background-image: url('segments.png');
                 -webkit-background-size: 758px 434px;
                 -moz-background-size: 758px 434px;

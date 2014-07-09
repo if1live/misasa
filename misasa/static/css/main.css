@@ -101,7 +101,7 @@ textarea {
 .background-pc {
     position: relative;
     width: 960px;
-    height: 7673px;
+    height: 9378px;
     margin: 0 auto;
     background: url('/static/images/bg/bg.jpg') no-repeat center top;
 }
@@ -143,19 +143,27 @@ textarea {
 /* TODO 좌표 세부 조정은 셀프 */
 .btn-pc-fb {
     position: absolute;
-    top: 4305px;
+    top: 6435px;
     left: 305px;
 }
 .btn-pc-kakaotalk {
     position: absolute;
-    top: 4305px;
+    top: 6435px;
     left: 473px;
 }
 .btn-pc-kakaostory {
     position: absolute;
-    top: 4305px;
+    top: 6435px;
     left: 655px;
 }
+
+.btn-pc-home{
+    position: absolute;
+    top: 8620px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;}
 
 /*
 absolute + center align
@@ -163,7 +171,7 @@ http://stackoverflow.com/questions/1776915/how-to-center-absolute-element-in-div
 */
 .btn-pc-cheer {
     position: absolute;
-    top: 5950px;
+    top: 8070px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -182,7 +190,7 @@ form input[type=text] {
 
 form[name=form-pre-registration] {
     position: absolute;
-    top: 3250px;
+    top: 5157px;
     left: 0;
     width: 960px;
 }
@@ -259,7 +267,7 @@ form[name=form-pre-registration] [type=submit] {
 
 form[name=form-refcount-pc] {
     position: absolute;
-    top: 6787px;
+    top: 5606px;
     left: 0;
 }
 form[name=form-refcount-pc] input[name=parent_count] {
@@ -272,7 +280,7 @@ form[name=form-refcount-pc] input[name=parent_count] {
 }
 form[name=form-refcount-pc] input[name=phone] {
     position: absolute;
-    top: 21px;
+    top: 23px;
     left: 205px;
     width: 141px;
 }
