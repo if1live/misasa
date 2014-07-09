@@ -40,6 +40,11 @@
     return url;
   }
 
+  function createShareURLFB() {
+    var url = 'http://como.5minlab.com';
+    return url;
+  }
+
   function createTitleImageURL() {
     var host = 'http://como.5minlab.com';
     var path = '/static/images/shared-badge/badge-270.jpg';
@@ -86,7 +91,7 @@
     ga('send', 'event', 'social-btn', 'fb');
     FB.ui({
       method: 'share',
-      href: createShareURL()
+      href: createShareURLFB()
     }, function(response){});
   }
 
