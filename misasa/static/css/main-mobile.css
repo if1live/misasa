@@ -138,12 +138,23 @@ textarea {
 	margin: 0 4.4%%;
 	text-align: center;
 }
+
+.home-wrapper {
+	background-color: #45a6ee;
+	margin: 0 0%;
+	text-align: center;
+}
+
+.home-wrapper .img_btn {
+	width: 80%;
+}
+
 .cheer-wrapper img {
 	width: 90%;
 }
 
 .refcount-wrapper {
-	background-color: #45a6ed;
+	background-color: #d0e759;
 }
 .refcount-wrapper [name=parent_count] {
 	width: 40px;
